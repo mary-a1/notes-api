@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { getUserNotes, getNotesById, addNote, updateNote, deleteNote, shareNote } = require('../db/queries/note');
+const { getUserNotes, getNotesById, addNote, updateNote, deleteNote, shareNote } = require('./db/queries/note');
 
 module.exports = (db) => {
   // To get a list of all notes for the authenticated user

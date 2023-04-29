@@ -1,7 +1,7 @@
 // Inital settings
 const express = require('express');
 const morgan = require('morgan');
-const db = require('./db');
+const db = require('./src/routes/db');
 const cookieParser = require('cookie-parser')
 const cookieParams = {
   httpOnly: true,
@@ -29,9 +29,9 @@ app.use(cookieParser(secretKey));
 
 
 // Separated Routes for each Resource
-const usersRouter = require('./routes/user');
-const notesRouter = require('./routes/notes');
-const searchRouter = require('./routes/search')
+const usersRouter = require('./src/routes/user');
+const notesRouter = require('./src/routes/notes');
+const searchRouter = require('./src/routes/search')
 
 
 

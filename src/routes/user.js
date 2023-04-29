@@ -1,7 +1,7 @@
 const validator = require('validator');
 const bcrypt = require("bcryptjs");
 const router = require("express").Router();
-const { getUserByEmail, addUser } = require('../db/queries/user');
+const { getUserByEmail, addUser } = require('./db/queries/user');
 
 module.exports = (db, cookieParams) => {
  
@@ -36,7 +36,7 @@ module.exports = (db, cookieParams) => {
         if (correctPassword === null) {
           message = 'Account does not exist';
         }
-        return res.status(status).send( "You are logged in!!!");
+        return res.status(status).send();
       })
   });
 
@@ -59,7 +59,7 @@ module.exports = (db, cookieParams) => {
       .then(({ rows: id }) => {
         userInfo.id = id[0].id;
         res.cookie('name', `${userInfo.id}`, cookieParams);
-        return res.status(200).send("User has been created!!");
+        return res.status(200).send();
       })
       .catch((err) => {
         res.status(status).send(err.detail)
