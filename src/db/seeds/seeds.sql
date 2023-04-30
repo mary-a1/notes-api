@@ -3,9 +3,7 @@ INSERT INTO users (email, password)
 VALUES 
 ('michael.lawson@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.'),
 ('lindsay.ferguson@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.'),
-('tobias.funke@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.'),
-('byron.fields@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.'),
-('rachel.howell@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.');
+('tobias.funke@gmail.com', '$2a$10$mOg1K5.ejDuaRtpYPw6E5.n9HASqxtdcMr66W4CtVPnlePROw8yP.');
 
 
 

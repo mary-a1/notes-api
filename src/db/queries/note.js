@@ -42,7 +42,6 @@ const shareNote = function(db, noteId, user_id) {
   return db.query(queryStringOne, queryParamsOne)
     .then ((result) => {
        // insert into notes user_id, noteContent (.then second query)
-      console.log("This is the result ", result)
       const text = result.rows[0].text
       const queryParamsTwo = [user_id, text]
       const queryStringTwo = `INSERT INTO notes (user_id, text)  VALUES ($1, $2) RETURNING *`;

@@ -1,20 +1,20 @@
 const validator = require('validator');
 const bcrypt = require("bcryptjs");
 const router = require("express").Router();
-const { getUserByEmail, addUser } = require('./db/queries/user');
+const { getUserByEmail, addUser } = require('../db/queries/user');
 
 module.exports = (db, cookieParams) => {
- 
+
   // For logging in
   router.post("/login", (req, res) => {
     // Validate the input
     const { email, password } = req.body;
     let status = 400;
     if (!(email && validator.isEmail(email))) {
-      return res.status(status).send({ message: "Please provide a valid email" })
+      return res.status(status).send({ message: "Please provide a valid email" });
     }
     if (!password || password.length < 1) {
-      return res.status(status).send({ message: "Please provide a valid password that is greater then 7 characters" })
+      return res.status(status).send({ message: "Please provide a valid password that is greater then 7 characters" });
     }
 
     // If valid get user information and verify login details
@@ -37,20 +37,20 @@ module.exports = (db, cookieParams) => {
           message = 'Account does not exist';
         }
         return res.status(status).send();
-      })
+      });
   });
 
   // For signing up
   router.post("/signup", async (req, res) => {
     // Validate the signup info
     const { email, password } = req.body;
-    const userInfo = { email, password: bcrypt.hashSync(req.body.password, 10)};
-    let status = 400
+    const userInfo = { email, password: bcrypt.hashSync(req.body.password, 10) };
+    let status = 400;
     if (!email || !validator.isEmail(email)) {
-      return res.status(status).send("Please provide a valid email")
+      return res.status(status).send("Please provide a valid email");
     }
     if (!password || password.length < 8) {
-      return res.status(status).send("Please provide a valid password that is greater than 7 characters")
+      return res.status(status).send("Please provide a valid password that is greater than 7 characters");
     }
 
     // If account does not exist vs. exists
@@ -62,7 +62,7 @@ module.exports = (db, cookieParams) => {
         return res.status(200).send();
       })
       .catch((err) => {
-        res.status(status).send(err.detail)
+        res.status(status).send(err.detail);
       });
   });
 

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/nodemon ./app.js",
     "test": "mocha",
-    "db:reset": "node db/scripts/resetdb.js"
+    "db:reset": "node src/db/scripts/resetdb.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

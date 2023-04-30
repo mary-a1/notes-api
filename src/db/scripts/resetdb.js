@@ -1,8 +1,8 @@
 // Create a connection to the db
 require("dotenv").config();
 const { Client } = require('pg');
-const SCHEMA_PATH = './db/schema';
-const SEEDS_PATH = './db/seeds';
+const SCHEMA_PATH = './src/db/schema';
+const SEEDS_PATH = './src/db/seeds';
 
 const { DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT } = process.env;
 const fs = require("fs").promises;

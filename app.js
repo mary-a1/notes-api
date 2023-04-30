@@ -1,7 +1,7 @@
 // Inital settings
 const express = require('express');
 const morgan = require('morgan');
-const db = require('./src/routes/db');
+const db = require('./src/db');
 const cookieParser = require('cookie-parser')
 const cookieParams = {
   httpOnly: true,
@@ -41,7 +41,7 @@ app.use('/api/search', searchRouter(db));
 
 
 
-app.listen(PORT, () => {
+module.exports = app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
